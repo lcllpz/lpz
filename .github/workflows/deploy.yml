@@ -1,0 +1,78 @@
+name: 部署文档
+
+on:
+  # 每当 push 到 main 分支时触发部署
+  push:
+    # 确保这是你正在使用的分支名称
+    branches: [main]
+  # 手动触发部署
+  workflow_dispatch:
+
+# 添加权限配置
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  # 第一个
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          # "最近更新时间" 等 git 日志相关信息，需要拉取全部提交记录
+          # "Last updated time" and other git log-related information require fetching all commit records.
+          fetch-depth: 0
+
+      - name: 安装 pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10.8.1
+
+      - name: 设置 Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 23.10.0
+
+      - name: 安装依赖
+        run: pnpm install --frozen-lockfile
+
+      - name: 构建文档
+        env:
+          NODE_OPTIONS: --max_old_space_size=8192
+        run: pnpm run docs:build
+
+      # 💡 为什么要生成 .nojekyll？
+      # GitHub Pages 默认会用 Jekyll（一个静态站点生成器）去处理你站点里的内容，而 Jekyll 会忽略所有以 _ 开头的文件夹/文件（比如 _assets/、_posts/）。
+      # 如果你的构建产物里包含 _ 开头的目录（很多静态站点生成器会这样），就会被 GitHub Pages “吞掉”。
+
+      # 有了 .nojekyll，GitHub Pages 会跳过 Jekyll
+      - name: 生成 .nojekyll
+        run: echo > docs/.vuepress/dist/.nojekyll
+
+      - name: 配置 GitHub Pages
+        uses: actions/configure-pages@v4
+
+      - name: 上传构建产物
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs/.vuepress/dist
+
+  # 部署到 GitHub Pages 定义一个名为 deploy 的 job（任务）。
+  deploy:
+    # 表示这个 job 必须等 build job 成功完成后才运行（构建产物已经准备好了）。
+    needs: build
+    # 运行环境：在 GitHub 的 Linux runner 上执行。
+    runs-on: ubuntu-latest
+    # 把这个 job 关联到 GitHub 的 Environment（环境），对“部署状态”/“页面 URL”有可视化展示效果。
+    environment:
+      # # 环境名字（随便取，但常用 github-pages）。
+      name: github-pages
+      #   url:  从后面这个 step 的输出里读出 page_url，然后显示在环境详情里（点 Actions 时能看到部署后的页面链接）。
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - name: 部署到 GitHub Pages
+        id: deploy
+        uses: actions/deploy-pages@v4
