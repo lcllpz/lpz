@@ -18,12 +18,13 @@ import collections from "./collections";
 /**
  * @see https://theme-plume.vuejs.press/config/theme/
  */
+export const logo = "logo.jpg";
 export default defineThemeConfig({
-  logo: "https://theme-plume.vuejs.press/plume.png",
+  logo: "logo.jpg",
   footer: false,
   appearance: true, // 配置 深色模式
 
-  social: [{ icon: "github", link: "https://github.com/liuchanglongs" }],
+  social: [{ icon: "github", link: "https://github.com/lcllpz" }],
   // navbarSocialInclude: ['github'], // 允许显示在导航栏的 social 社交链接
   // aside: true, // 页内侧边栏， 默认显示在右侧
   // outline: [2, 3], // 页内大纲， 默认显示 h2, h3
@@ -48,7 +49,7 @@ export default defineThemeConfig({
    * @see https://theme-plume.vuejs.press/config/theme/#profile
    */
   profile: {
-    avatar: "logo.jpg",
+    avatar: logo,
     name: "LCL",
     description: "Write A Water Blog",
     circle: true,

@@ -12,16 +12,17 @@
 import { viteBundler } from "@vuepress/bundler-vite";
 import { defineUserConfig } from "vuepress";
 import { plumeTheme } from "vuepress-theme-plume";
-
+import { logo } from "./plume.config";
+const base = "/lpz/";
 export default defineUserConfig({
-  base: "/blog/",
+  base,
   lang: "zh-CN",
   title: "Write-A-Blog",
   description: "Write A Blog",
 
   head: [
     // 配置站点图标
-    ["link", { rel: "icon", type: "image/png", href: "/logo.jpg" }],
+    ["link", { rel: "icon", type: "image.jpg", href: base + logo }],
   ],
 
   bundler: viteBundler(),
