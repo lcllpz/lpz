@@ -1,0 +1,4 @@
+version: 1
+display_name: Plume Note Migration
+short_description: Migrate notes into vuepress-theme-plume markdown
+default_prompt: Use this skill to convert or normalize notes for a vuepress-theme-plume blog.

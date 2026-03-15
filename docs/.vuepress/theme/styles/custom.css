@@ -24,6 +24,15 @@
   --vp-c-text-2: rgba(60, 60, 67, 0.78);
   --vp-c-text-3: rgba(60, 60, 67, 0.56);
   */
+
+  --blog-mark-bg: #fff1a8;
+  --blog-mark-text: #5a3b00;
+  --blog-inline-code-bg: linear-gradient(180deg, #fff8f2 0%, #fff1e7 100%);
+  --blog-inline-code-text: #b42318;
+  --blog-inline-code-border: rgba(180, 35, 24, 0.14);
+  --blog-inline-code-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+  --blog-strong-text: #0f172a;
+  --blog-strong-accent: rgba(251, 191, 36, 0.38);
 }
 
 /** 深色模式 */
@@ -47,4 +56,59 @@
   --vp-c-text-2: rgba(235, 235, 245, 0.6);
   --vp-c-text-3: rgba(235, 235, 245, 0.38);
   */
+
+  --blog-mark-bg: rgba(255, 214, 10, 0.24);
+  --blog-mark-text: #ffe38a;
+  --blog-inline-code-bg: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.08) 0%,
+    rgba(255, 255, 255, 0.04) 100%
+  );
+  --blog-inline-code-text: #ffb4aa;
+  --blog-inline-code-border: rgba(255, 180, 170, 0.2);
+  --blog-inline-code-shadow: none;
+  --blog-strong-text: #f8fafc;
+  --blog-strong-accent: rgba(250, 204, 21, 0.2);
+}
+
+.vp-doc mark {
+  background: var(--blog-mark-bg);
+  color: var(--blog-mark-text);
+  padding: 0.12em 0.38em;
+  border-radius: 4px;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.vp-doc strong {
+  color: var(--blog-strong-text) !important;
+  font-weight: bolder;
+  font-size: large;
+  letter-spacing: 0.01em;
+  /* background: linear-gradient(transparent 58%, var(--blog-strong-accent) 58%); */
+  padding: 0 0.08em;
+}
+
+.vp-doc p code,
+.vp-doc li code,
+.vp-doc td code,
+.vp-doc blockquote code {
+  background: var(--blog-inline-code-bg);
+  color: var(--blog-inline-code-text);
+  padding: 0.16em 0.42em;
+  border: 1px solid var(--blog-inline-code-border);
+  border-radius: 7px;
+  box-shadow: var(--blog-inline-code-shadow);
+  font-weight: 650;
+  font-size: 0.92em;
+  white-space: nowrap;
+}
+
+.vp-doc strong code,
+.vp-doc mark code {
+  font-weight: inherit;
+}
+
+.vp-doc strong code {
+  color: inherit;
 }

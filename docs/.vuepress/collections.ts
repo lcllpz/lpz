@@ -79,9 +79,37 @@ const ReactDoc = defineCollection({
   sidebarScrollbar: true,
 });
 
+const HtmlAndCss = defineCollection({
+  type: "doc",
+  dir: "HtmlAndCss",
+  linkPrefix: "/HtmlAndCss",
+  title: "HtmlAndCss",
+  sidebar: [
+    {
+      text: "HTML",
+      collapsed: false,
+      items: [],
+    },
+    {
+      text: "CSS",
+      collapsed: false,
+      items: [
+        { text: "css计算过程", link: "/HtmlAndCss/vt05yez2/" },
+        // { text: "泛型与类型编程", link: "/typescript/LjFVlP-2/" },
+        // { text: "装饰器", link: "/typescript/SWKeJjH5/" },
+      ],
+    },
+  ],
+  autoFrontmatter: {
+    title: true,
+    createTime: true,
+    permalink: true,
+  },
+});
+
 /**
  * 导出所有的 collections
  * (blog 为博客示例，如果不需要博客功能，请删除)
  * (demoDoc 为参考示例，如果不需要它，请删除)
  */
-export default defineCollections([blog, demoDoc, ReactDoc]);
+export default defineCollections([blog, demoDoc, ReactDoc, HtmlAndCss]);

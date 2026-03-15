@@ -14,7 +14,7 @@ export default defineNavbarConfig([
   {
     text: "前端基础",
     items: [
-      { text: "Html", link: "/Html/README.md" },
+      { text: "HtmlAndCss", link: "/HtmlAndCss/" },
       { text: "Css", link: "/Css/README.md" },
       { text: "Javascript", link: "/Javascript/README.md" },
       { text: "浏览器", link: "/WebBrowser/README.md" },
