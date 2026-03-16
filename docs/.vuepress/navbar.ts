@@ -37,7 +37,8 @@ export default defineNavbarConfig([
       { text: "React", link: "/React/README.md" },
     ],
   },
-  { text: "面试", link: "/JobInterview/README.md" },
+  { text: "面试", link: "/JobInterview/" },
+  { text: "AI", link: "/AI/VibeCodeing.md" },
 
   // // { text: "", link: "/demo/README.md" },
   // { text: "示例", link: "/demo/README.md" },

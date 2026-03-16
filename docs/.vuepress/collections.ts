@@ -107,9 +107,62 @@ const HtmlAndCss = defineCollection({
   },
 });
 
+const JobInterview = defineCollection({
+  type: "doc",
+  dir: "JobInterview",
+  linkPrefix: "/JobInterview",
+  title: "Job Interview",
+  sidebar: [
+    {
+      text: "hr",
+      collapsed: false,
+      items: [{ text: "常见问题", link: "/JobInterview/7pc8ff0c/" }],
+    },
+    // {
+    //   text: "CSS",
+    //   collapsed: false,
+    //   items: [
+    //     { text: "css计算过程", link: "/HtmlAndCss/vt05yez2/" },
+    //     // { text: "泛型与类型编程", link: "/typescript/LjFVlP-2/" },
+    //     // { text: "装饰器", link: "/typescript/SWKeJjH5/" },
+    //   ],
+    // },
+  ],
+  autoFrontmatter: {
+    title: true,
+    createTime: true,
+    permalink: true,
+  },
+});
+
+const AI = defineCollection({
+  type: "doc",
+  dir: "AI",
+  linkPrefix: "/AI",
+  title: "AI",
+  sidebar: [
+    {
+      text: "Vibe Codeing",
+      link: "/AI/7pc8ff0c/",
+    },
+  ],
+  autoFrontmatter: {
+    title: true,
+    createTime: true,
+    permalink: true,
+  },
+});
+
 /**
  * 导出所有的 collections
  * (blog 为博客示例，如果不需要博客功能，请删除)
  * (demoDoc 为参考示例，如果不需要它，请删除)
  */
-export default defineCollections([blog, demoDoc, ReactDoc, HtmlAndCss]);
+export default defineCollections([
+  blog,
+  demoDoc,
+  ReactDoc,
+  HtmlAndCss,
+  JobInterview,
+  AI,
+]);
