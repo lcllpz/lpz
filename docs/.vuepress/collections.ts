@@ -118,15 +118,18 @@ const JobInterview = defineCollection({
       collapsed: false,
       items: [{ text: "常见问题", link: "/JobInterview/7pc8ff0c/" }],
     },
-    // {
-    //   text: "CSS",
-    //   collapsed: false,
-    //   items: [
-    //     { text: "css计算过程", link: "/HtmlAndCss/vt05yez2/" },
-    //     // { text: "泛型与类型编程", link: "/typescript/LjFVlP-2/" },
-    //     // { text: "装饰器", link: "/typescript/SWKeJjH5/" },
-    //   ],
-    // },
+    {
+      text: "面试合集",
+      collapsed: false,
+      items: [
+        {
+          text: "20260313",
+          link: "/JobInterview/JobInterview/7pc8ff0c/eelh3nbk/",
+        },
+        // { text: "泛型与类型编程", link: "/typescript/LjFVlP-2/" },
+        // { text: "装饰器", link: "/typescript/SWKeJjH5/" },
+      ],
+    },
   ],
   autoFrontmatter: {
     title: true,
