@@ -148,6 +148,10 @@ const AI = defineCollection({
       text: "Vibe Codeing",
       link: "/AI/7pc8ff0c/",
     },
+    {
+      text: "国内丝滑使用Cursor大模型",
+      link: "/AI/AI/7pc8ff0c/sttggja8/",
+    },
   ],
   autoFrontmatter: {
     title: true,
