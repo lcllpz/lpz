@@ -160,6 +160,25 @@ const AI = defineCollection({
   },
 });
 
+const Scenario = defineCollection({
+  type: "doc",
+  dir: "scenario",
+  linkPrefix: "/scenario",
+  title: "scenario",
+  sidebar: [
+    {
+      text: "h5",
+      collapsed: false,
+      items: [{ text: "布局", link: "/scenario/3sdc5wr4/" }],
+    },
+  ],
+  autoFrontmatter: {
+    title: true,
+    createTime: true,
+    permalink: true,
+  },
+});
+
 /**
  * 导出所有的 collections
  * (blog 为博客示例，如果不需要博客功能，请删除)
@@ -172,4 +191,5 @@ export default defineCollections([
   HtmlAndCss,
   JobInterview,
   AI,
+  Scenario,
 ]);

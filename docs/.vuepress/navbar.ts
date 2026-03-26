@@ -39,6 +39,7 @@ export default defineNavbarConfig([
   },
   { text: "面试", link: "/JobInterview/" },
   { text: "AI", link: "/AI/VibeCodeing.md" },
+  { text: "场景", link: "/scenario/README.md" },
 
   // // { text: "", link: "/demo/README.md" },
   // { text: "示例", link: "/demo/README.md" },
