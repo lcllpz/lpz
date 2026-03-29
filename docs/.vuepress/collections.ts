@@ -119,14 +119,17 @@ const JobInterview = defineCollection({
       items: [{ text: "常见问题", link: "/JobInterview/7pc8ff0c/" }],
     },
     {
-      text: "面试合集",
+      text: "2026面试合集(3-5月)",
       collapsed: false,
       items: [
         {
-          text: "20260313",
+          text: "202603",
           link: "/JobInterview/JobInterview/7pc8ff0c/eelh3nbk/",
         },
-        // { text: "泛型与类型编程", link: "/typescript/LjFVlP-2/" },
+        {
+          text: "百度",
+          link: "/JobInterview/JobInterview/JobInterview/7pc8ff0c/eelh3nbk/z81t5o0c/",
+        },
         // { text: "装饰器", link: "/typescript/SWKeJjH5/" },
       ],
     },
